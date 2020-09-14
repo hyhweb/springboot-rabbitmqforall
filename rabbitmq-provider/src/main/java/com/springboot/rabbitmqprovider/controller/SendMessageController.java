@@ -26,7 +26,7 @@ public class SendMessageController {
         String messageId = String.valueOf(UUID.randomUUID());
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("messageId", messageId);
-        map.put("message", "test send message,hello " + message);
+        map.put("message", "test send message ");
         rabbitTemplate.convertAndSend("TestDirectExchange", "TestDirectRouting", map);
         return "send successs";
     }

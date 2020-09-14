@@ -9,6 +9,7 @@ import java.util.Map;
 /**
  * Create by hyhweb on 2020/9/14 10:47
  */
+/*
 @Component
 @RabbitListener(queues = "TestDirectQueue") //监听的队列名称:TestDirectQueue
 public class DirectReceiverNew {
@@ -17,3 +18,4 @@ public class DirectReceiverNew {
         System.out.println("第二个DirectReceiver消费者收到消息："+message.toString());
     }
 }
+*/
