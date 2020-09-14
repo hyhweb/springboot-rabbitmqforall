@@ -1,0 +1,13 @@
+server:
+  port: 8032
+spring:
+  application:
+    name: rabbitmq-client
+  rabbitmq:
+    host: 192.168.226.136
+    port: 5672
+    username: admin
+    password: admin
+      #虚拟host 可以不设置,使用server默认host
+    #virtual-host: JCcccHost
+
