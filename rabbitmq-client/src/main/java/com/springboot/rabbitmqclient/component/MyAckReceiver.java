@@ -28,9 +28,11 @@ public class MyAckReceiver implements ChannelAwareMessageListener  {
             System.out.println("  MyAckReceiver  messageId:"+messageId+"  messageData:"+messageData);
 //            System.out.println("  MyAckReceiver  messageId:"+messageId+"  messageData:"+messageData+"  createTime:"+createTime);
             System.out.println("消费的主题消息来自："+message.getMessageProperties().getConsumerQueue());
+            // 确认收到消息，false只确认当前consumer一个消息收到，true确认所有consumer获得的消息
             channel.basicAck(deliveryTag, true);
 //			channel.basicReject(deliveryTag, true);//为true会重新放回队列
         } catch (Exception e) {
+            // 拒绝消息，requeue=false 表示不再重新入队，如果配置了死信队列则进入死信队列
             channel.basicReject(deliveryTag, false);
             e.printStackTrace();
         }
